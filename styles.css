@@ -17,21 +17,24 @@ body {
     color: #262626;
     padding-bottom: 3rem;
    display: flex;
-   
-   align-items: 
+   justify-content:center;
+   align-items: center;
    margin: 0;
    
    
 }
 
 img {
-    display: flex;
+    display: block;
+    width: 100%;
+    height: auto;
+    
 }
 .profile {
-    background-color: #ffff;
+    background-color: #fff;
     padding: 20px;
     max-width: 600px;
-    box-shadow: 0 0 10px #000;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 .profile-header {
     display: flex;
@@ -39,8 +42,8 @@ img {
 }
 
 .profile-image { 
-    width: 100px;
-    height: 100px;
+    width: 100%;
+    height: 100%;
     border-radius: 50%;
     margin-right: 20px;
 }
@@ -57,4 +60,62 @@ img {
 
 .profile-bio {
     flex: 1;
+}
+
+.profile-bio h1 {
+    margin: 0;
+    font-size: 24px;
+
+}
+.profile-bio p {
+    font-size: 14px;
+    color: #777;
+}
+
+
+.gallery{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 5px;
+    margin-top: 10px;
+    flex-wrap: 10px;
+}
+
+
+.gallery img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+
+}
+.container{
+    position: relative;
+    width: 200px;
+    padding-bottom: 100%;
+    overflow: hidden;
+}
+.overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    transition:  .5s ease;
+    background-color: rgba(0, 0, 0, 0.7);
+
+}
+.container:hover .overlay{
+    opacity: 1;
+}
+.gallery-item-info{
+    color: #fff;
+    font-size: 2rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
 }
